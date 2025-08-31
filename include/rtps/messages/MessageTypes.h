@@ -25,8 +25,7 @@ Author: i11 - Embedded Software, RWTH Aachen University
 #ifndef RTPS_MESSAGES_H
 #define RTPS_MESSAGES_H
 
-#include "rtps/common/types.h"
-
+#include <rtps/common/types.hpp>
 #include <array>
 
 namespace rtps {
@@ -87,7 +86,8 @@ enum ParameterId : uint16_t {
   PID_TYPE_MAX_SIZE_SERIALIZED = 0x0060,
   PID_ENTITY_NAME = 0x0062,
   PID_KEY_HASH = 0x0070,
-  PID_STATUS_INFO = 0x0071
+  PID_STATUS_INFO = 0x0071,
+  PID_UNKNOWN = 0x8007
 };
 
 enum BuildInEndpointSet : uint32_t {
@@ -132,7 +132,8 @@ enum class SubmessageKind : uint8_t {
   NACK_FRAG = 0x12,      /* NackFrag */
   HEARTBEAT_FRAG = 0x13, /* HeartbeatFrag */
   DATA = 0x15,           /* Data */
-  DATA_FRAG = 0x16       /* DataFrag */
+  DATA_FRAG = 0x16,      /* DataFrag */
+  VENDOR_SPECFIC = 0x80
 };
 
 enum SubMessageFlag : uint8_t {
