@@ -66,10 +66,10 @@ private:
   sys_sem_t m_readerNotificationSem;
   sys_sem_t m_writerNotificationSem;
 
-  ThreadSafeCircularBuffer<Writer *, Config::THREAD_POOL_WORKLOAD_QUEUE_LENGTH>
+  ThreadSafeCircularBuffer<Writer *, Config::THREAD_POOL_WORKLOAD_QUEUE_LENGTH_USERTRAFFIC>
       m_queueOutgoing;
   ThreadSafeCircularBuffer<PacketInfo,
-                           Config::THREAD_POOL_WORKLOAD_QUEUE_LENGTH>
+                           Config::THREAD_POOL_WORKLOAD_QUEUE_LENGTH_USERTRAFFIC>
       m_queueIncoming;
 
   static void writerThreadFunction(void *arg);

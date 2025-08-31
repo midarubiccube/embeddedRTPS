@@ -25,8 +25,8 @@ Author: i11 - Embedded Software, RWTH Aachen University
 #ifndef RTPS_PBUFWRAPPER_H
 #define RTPS_PBUFWRAPPER_H
 
+#include <rtps/common/types.hpp>
 #include "lwip/pbuf.h"
-#include "rtps/common/types.h"
 
 namespace rtps {
 
@@ -69,7 +69,7 @@ struct PBufWrapper {
 
 private:
   constexpr static pbuf_layer m_layer = PBUF_TRANSPORT;
-  constexpr static pbuf_type m_type = PBUF_POOL;
+  constexpr static pbuf_type m_type = PBUF_RAM;
 
   DataSize_t m_freeSpace = 0;
 

@@ -25,7 +25,7 @@ Author: i11 - Embedded Software, RWTH Aachen University
 #ifndef RTPS_PACKETINFO_H
 #define RTPS_PACKETINFO_H
 
-#include "rtps/common/types.h"
+#include <rtps/common/types.hpp>
 #include "rtps/storages/PBufWrapper.h"
 
 namespace rtps {

@@ -25,7 +25,7 @@ Author: i11 - Embedded Software, RWTH Aachen University
 #ifndef RTPS_READER_H
 #define RTPS_READER_H
 
-#include "rtps/common/types.h"
+#include <rtps/common/types.hpp>
 #include "rtps/config.h"
 #include "rtps/discovery/TopicData.h"
 #include "rtps/entities/WriterProxy.h"
@@ -38,10 +38,8 @@ namespace rtps {
 struct SubmessageHeartbeat;
 
 class ReaderCacheChange {
-private:
-  const uint8_t *data;
-
 public:
+  const uint8_t *data;
   const ChangeKind_t kind;
   const DataSize_t size;
   const Guid_t writerGuid;
@@ -85,7 +83,8 @@ public:
   virtual bool onNewHeartbeat(const SubmessageHeartbeat &msg,
                               const GuidPrefix_t &remotePrefix) = 0;
   virtual bool addNewMatchedWriter(const WriterProxy &newProxy) = 0;
-  virtual void removeWriter(const Guid_t &guid) = 0;
+  virtual void removeWriter(const
+     Guid_t &guid) = 0;
   virtual void removeWriterOfParticipant(const GuidPrefix_t &guidPrefix) = 0;
   bool isInitialized() { return m_is_initialized_; }
 

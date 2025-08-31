@@ -120,6 +120,10 @@ bool MessageReceiver::processSubmessage(MessageProcessingInfo &msgInfo,
     RECV_LOG("Info_TS submessage not relevant.\n");
     success = true; // Not relevant now
     break;
+  case SubmessageKind::VENDOR_SPECFIC:
+    RECV_LOG("VENDOR_SPECFIC submessage not relevant.\n");
+    success = true;
+    break;
   default:
     RECV_LOG("Submessage of type %u currently not supported. Skipping..\n",
              static_cast<uint8_t>(submsgHeader.submessageId));
